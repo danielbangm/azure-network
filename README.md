@@ -86,9 +86,20 @@ Now you'll notice we are in VM2 which runs Ubuntu and how powershell prompt has 
 
 ![image](https://github.com/danielbangm/azure-network/assets/22795502/ae6c36af-fdb7-49ff-b90e-3dc495035b3c)
 
+-  Step 8: Observe DNS traffic
 
+<p>
+Let's observe some DNS traffic in wireshark by going to the powershell again and type for instance "nslookup www.google.com" which is essentially asking our DNS the IP address of google. As soon as we do that, observe how we have a bunch of source and destination IP addresses in wireshark. Once again another way to filter for DNS is by typing "udp.port == 53" since DNS uses udp port 53
+</p>
 
+![image](https://github.com/danielbangm/azure-network/assets/22795502/a27b466d-58bd-482e-b3f8-6da006237872)
+![image](https://github.com/danielbangm/azure-network/assets/22795502/6e905bff-3197-4f28-8dce-bc4375a3a372)
 
+-  Step 9: Observe RDP traffic
 
+<p>
+ Let's observe some RDP traffic in wireshark. Remember we've been actually using RDP since the beginning of this lab because we are remotely connected to VM1 using Remote Destop Connection therefore when we filter by RDP it is definitely going to be spamming non stop due to everything we have been doing so far. off course we can also filter by typing "tcp.port == 3389" since RDP uses Tcp port 3389. We can also notice the majority of our source address is our own address 10.0.0.4
+</p>
 
+![image](https://github.com/danielbangm/azure-network/assets/22795502/a9d4fa82-e096-461a-9c40-bd6e4a35b1bb)
 
