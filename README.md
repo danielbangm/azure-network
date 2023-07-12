@@ -65,7 +65,7 @@ We are just going to reallow ICMP in our VM2's Network Security Group and observ
 ![image](https://github.com/danielbangm/azure-network/assets/22795502/4f42ac31-4ca2-4a14-914a-9ed8d38c1191)
 ![image](https://github.com/danielbangm/azure-network/assets/22795502/7020fd26-133b-4d65-9854-00f6b409d003)
 
--  Step 6: Connect from VM1 TO VM2 via SSH
+-  Step 6: Connect TO VM2 via SSH from VM1
 
 <p>
 First we are going to clear our wireshark and filter by SSH. Then in VM1 go to the powershell and type the command "ssh 10.0.0.5@labuser" in order to SSH VM2 because VM2's private IP address is 10.0.0.5. It will prompt you to enter VM2's password that you created earlier today. From now we can observe the traffic in wireshark
@@ -77,4 +77,18 @@ Now you'll notice we are in VM2 which runs Ubuntu and how powershell prompt has 
 </p>
 
 ![image](https://github.com/danielbangm/azure-network/assets/22795502/799723d9-f15a-49c6-82f8-0cc67f6117a6)
+
+-  Step 7: Wireshark hands-on
+
+<p>
+ You can filter for example ssh traffic in wireshark by typing ssh in the filter area or you can also type "tcp.port == 22" since ssh uses tcp port 22
+</p>
+
+![image](https://github.com/danielbangm/azure-network/assets/22795502/ae6c36af-fdb7-49ff-b90e-3dc495035b3c)
+
+
+
+
+
+
 
